@@ -1,4 +1,4 @@
-# Base de entrada da PoC 5
+# Base de entrada do projeto
 
 ## Arquivo versionado
 

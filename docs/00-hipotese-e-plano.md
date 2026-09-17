@@ -1,4 +1,4 @@
-# Hipótese e plano da PoC 5
+# Hipótese e plano do projeto
 
 ## Objetivo
 
