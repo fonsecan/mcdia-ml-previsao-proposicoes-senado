@@ -12,11 +12,19 @@ A unidade de previsão é uma contagem agregada por mês, tipo documental e tema
 
 A base inicial foi obtida em **17/09/2026**, a partir da API oficial de Dados Abertos do Senado:
 
-- **Fonte:** [API GraphQL de Dados Abertos do Senado](https://legis.senado.leg.br/dadosabertos/graphql)
+- **Portal navegável:** [Dados Abertos — Projetos e Matérias](https://www12.senado.leg.br/dados-abertos/legislativo/projetos-e-materias)
+- **Documentação da API:** [Swagger UI](https://legis.senado.leg.br/dadosabertos/api-docs/swagger-ui/index.html)
+- **Especificação OpenAPI:** [JSON da API](https://legis.senado.leg.br/dadosabertos/v3/api-docs)
+- **Operação REST aplicável no Swagger:** `GET /dadosabertos/processo`
+- **Filtros de período:** `dataInicioApresentacao` e `dataFimApresentacao`, no formato `AAAA-MM-DD`
+- **Exemplo de consulta:** [`GET /dadosabertos/processo?dataInicioApresentacao=2021-09-16&dataFimApresentacao=2022-09-16`](https://legis.senado.leg.br/dadosabertos/processo?dataInicioApresentacao=2021-09-16&dataFimApresentacao=2022-09-16)
+- **Endpoint GraphQL usado pelo script:** [https://legis.senado.leg.br/dadosabertos/graphql](https://legis.senado.leg.br/dadosabertos/graphql). Esse endereço é uma API técnica e não deve ser aberto como uma página comum no navegador; ele requer uma requisição `POST` com uma consulta GraphQL.
 - **Período das proposições:** de 16/09/2021 a 15/09/2026
 - **Recorte:** propostas normativas dos tipos legislativos selecionados na consulta
 - **Volume:** 8.651 registros, com identificadores únicos
 - **Campos principais:** identificação, ementa, indexação, tipo documental, data de apresentação e URL pública do documento
+
+A operação REST `/dadosabertos/processo` limita a pesquisa por período a, no máximo, um ano por consulta. Por isso, a extração de cinco anos deve ser feita em intervalos sucessivos ou reproduzida pelo script atual, que usa a consulta GraphQL paginada.
 
 A resposta da API foi convertida para CSV para facilitar a exploração nos notebooks e o uso no JupyterLab. O arquivo está versionado em:
 
