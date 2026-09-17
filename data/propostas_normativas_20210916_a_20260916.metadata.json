@@ -1,0 +1,17 @@
+{
+  "registros": 8651,
+  "coletado_em_utc": "2026-09-17T00:50:39.946157+00:00",
+  "inicio": "2021-09-16",
+  "fim": "2026-09-16",
+  "tipos": [
+    "PROJETO_LEI_ORDINARIA",
+    "PROJETO_LEI_COMPLEMENTAR",
+    "PROJETO_DECRETO_LEGISLATIVO",
+    "PROJETO_RESOLUCAO",
+    "MEDIDA_PROVISORIA",
+    "PROPOSTA_EMENDA_CONSTITUICAO",
+    "PROJETO_LEI_CONVERSAO",
+    "PROJETO_LEI"
+  ],
+  "fonte": "https://legis.senado.leg.br/dadosabertos/graphql"
+}
